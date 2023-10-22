@@ -1,6 +1,7 @@
 import * as path from "path"
 
 export class FolderStructureAnalyzer {
+  //Claffication of folders into 4 categories
   private utilsFolders: string[]
   private controllerFolders: string[]
   private uiFolders: string[]
@@ -13,8 +14,12 @@ export class FolderStructureAnalyzer {
     this.widgetFolders = []
   }
 
+
+  //Function to analyze folder structure
   public analyzeFolderStructure(fileStructure: Record<string, number>) {
+
     for (const filePath in fileStructure) {
+      // Extract the file name and folder name from the file path and based on name, classify the folder into 4 categories
       const fileName = path.basename(filePath).toLowerCase()
       const folderName = path.basename(path.dirname(filePath)).toLowerCase()
 
@@ -43,6 +48,7 @@ export class FolderStructureAnalyzer {
         this.widgetFolders.push(filePath)
       }
     }
+  
   }
 
   private containsKeyword(fileName: string, keywords: string[]): boolean {
@@ -50,6 +56,8 @@ export class FolderStructureAnalyzer {
     return keywords.some((keyword) => lowerCaseFileName.includes(keyword))
   }
 
+
+  //Getter functions to return the 4 categories of folders
   public getUtilsFolders(): string[] {
     return this.utilsFolders
   }

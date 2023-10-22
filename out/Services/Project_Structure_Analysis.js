@@ -9,8 +9,10 @@ class FolderStructureAnalyzer {
         this.uiFolders = [];
         this.widgetFolders = [];
     }
+    //Function to analyze folder structure
     analyzeFolderStructure(fileStructure) {
         for (const filePath in fileStructure) {
+            // Extract the file name and folder name from the file path and based on name, classify the folder into 4 categories
             const fileName = path.basename(filePath).toLowerCase();
             const folderName = path.basename(path.dirname(filePath)).toLowerCase();
             if (this.containsKeyword(fileName, ["utils", "asset"]) ||
@@ -31,13 +33,12 @@ class FolderStructureAnalyzer {
                 this.widgetFolders.push(filePath);
             }
         }
-        console.log("utilsFolders11:", this.utilsFolders);
-        console.log("controllerFolders11:", this.controllerFolders);
     }
     containsKeyword(fileName, keywords) {
         const lowerCaseFileName = fileName.toLowerCase();
         return keywords.some((keyword) => lowerCaseFileName.includes(keyword));
     }
+    //Getter functions to return the 4 categories of folders
     getUtilsFolders() {
         return this.utilsFolders;
     }

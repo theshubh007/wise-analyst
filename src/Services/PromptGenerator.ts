@@ -11,11 +11,11 @@ export class PromptGenerator {
   }
 
   generateAnalysisReport(): string {
-    // Implement logic to generate an analysis report based on this.analysisResults
-    // For example, you can use template literals to construct the report.
+    // Implement logic to generate an analysis report 
+
     const analysisReport = `
       Analysis Report:
-      - Total API Endpoints: ${this.analysisResults.apiEndpoints.length}
+      - Total API Endpoints: ${this.analysisResults.apiEndpointsnum}
       - Total API Calling Functions: ${this.analysisResults.apiCallingFunctions.length}
       - Total Code Quality Issues: ${this.analysisResults.codeQualityIssues.length}
       `
@@ -26,15 +26,18 @@ export class PromptGenerator {
     fileContent: string,
     retryCount: number = 0
   ): Promise<string> {
-    console.log("Generating prompt for extension"+fileContent)
-    const instruction = `Provide a suggestion for a new feature or improvement in the code:\n\n`
+
+     const instruction1 = `Provide 1 efficient and effective suggestion for a new feature or improvement in the code. Alongside it, provide example code based on the latest version of Flutter:\n\n`
+
+
+    const instruction = `Provide a list of 5 suggestions for a new feature or improvement in the code. Alongside each suggestion, provide example code based on the latest version of Flutter. Ensure there are 32 tab spaces between each of the 5 suggestions for clarity. Additionally, maintain 5 empty lines between each suggestion to enhance readability:\n\n`
 
     try {
       const response = await axios.post(
         this.chatGPTUrl,
         {
           model: "text-davinci-003",
-          prompt: `${instruction}${fileContent}`,
+          prompt: `${instruction1}${fileContent}`,
           max_tokens: 2000,
           temperature: 0.5,
         },
@@ -86,7 +89,7 @@ export class PromptGenerator {
 }
 
 interface AnalysisResults {
-  apiEndpoints: string[]
+  apiEndpointsnum: string
   apiCallingFunctions: string[]
   codeQualityIssues: string[]
 }

@@ -1,6 +1,7 @@
 export class CodeQualityAnalyzer {
   private static readonly MAX_FUNCTION_SIZE = 20 // Adjust as needed
 
+  //Function to analyze modularity
   analyzeModularity(code: string): string[] {
     const issues: string[] = []
 
@@ -31,6 +32,7 @@ export class CodeQualityAnalyzer {
     return issues
   }
 
+  //Function to analyze readability
   analyzeReadability(code: string): string[] {
     const issues: string[] = []
 
@@ -51,6 +53,7 @@ export class CodeQualityAnalyzer {
     return issues
   }
 
+  //Function to analyze coding standards
   analyzeCodingStandards(code: string): string[] {
     const issues: string[] = []
 

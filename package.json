@@ -16,7 +16,11 @@
       {
         "command": "extension.analyzeFlutterApp",
         "title": "Flutter: Analyze App"
-      }
+      },
+       {
+      "command": "extension.createFlutterFeature",
+      "title": "Flutter: Create New Feature"
+    }
     ]
   },
   "scripts": {
