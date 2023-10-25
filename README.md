@@ -15,15 +15,17 @@ The target audience includes a developer/team whose goal is to work on a new cod
 • Press (ctrl+shift+p) then the search and select command
   “Flutter: Analyze App” as given below.
 
-  ![Alt text](image.png)
+  ![image](https://github.com/theshubh007/wise-analyst/assets/100220928/1b4eedb4-f48b-4b05-af6f-f26735cef1d3)
+
 
 ## Output Analysis  
 
-  ![Alt text](image-3.png)
+  ![image](https://github.com/theshubh007/wise-analyst/assets/100220928/14dc6729-f2b4-4f9c-9af7-ca5a7dc845eb)
 
-  ![Alt text](image-1.png)
+  ![image](https://github.com/theshubh007/wise-analyst/assets/100220928/6767d8ae-0684-4d3e-8f04-723de06d528e)
 
-  ![Alt text](image-2.png)
+  ![image](https://github.com/theshubh007/wise-analyst/assets/100220928/9ed1d46c-75e3-41d9-9a7d-f0771f2bb5d3)
+
 
 
 ## Note
