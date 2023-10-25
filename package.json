@@ -1,7 +1,8 @@
 {
-  "name": "flutter-analyzer-extension",
-  "displayName": "flutter-analyzer-extension",
-  "description": "flutter analyzing",
+  "name": "Wise-Analyst",
+  "displayName": "WiseAnalyst",
+  "publisher": "ShubhamKothiya",
+  "description": "Code Analysis for Flutter",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.83.0"
@@ -17,10 +18,10 @@
         "command": "extension.analyzeFlutterApp",
         "title": "Flutter: Analyze App"
       },
-       {
-      "command": "extension.createFlutterFeature",
-      "title": "Flutter: Create New Feature"
-    }
+      {
+        "command": "extension.createFlutterFeature",
+        "title": "Flutter: Create New Feature"
+      }
     ]
   },
   "scripts": {

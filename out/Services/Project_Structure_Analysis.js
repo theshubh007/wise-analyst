@@ -4,10 +4,10 @@ exports.FolderStructureAnalyzer = void 0;
 const path = require("path");
 class FolderStructureAnalyzer {
     constructor() {
-        this.utilsFolders = [];
-        this.controllerFolders = [];
-        this.uiFolders = [];
-        this.widgetFolders = [];
+        this.utilsFolders = new Set();
+        this.controllerFolders = new Set();
+        this.uiFolders = new Set();
+        this.widgetFolders = new Set();
     }
     //Function to analyze folder structure
     analyzeFolderStructure(fileStructure) {
@@ -17,20 +17,20 @@ class FolderStructureAnalyzer {
             const folderName = path.basename(path.dirname(filePath)).toLowerCase();
             if (this.containsKeyword(fileName, ["utils", "asset"]) ||
                 this.containsKeyword(folderName, ["utils", "widget"])) {
-                this.utilsFolders.push(filePath);
+                this.utilsFolders.add(filePath);
             }
             else if (this.containsKeyword(fileName, ["controller"]) ||
                 this.containsKeyword(folderName, ["controller"])) {
-                this.controllerFolders.push(filePath);
+                this.controllerFolders.add(filePath);
             }
             else if (this.containsKeyword(fileName, ["presentation", "screen", "page"]) ||
                 this.containsKeyword(folderName, ["presentation", "screen", "page"])) {
-                this.uiFolders.push(filePath);
+                this.uiFolders.add(filePath);
             }
             // Check if the folder or file name contains "widget"
             if (this.containsKeyword(fileName, ["widget"]) ||
                 this.containsKeyword(folderName, ["widget"])) {
-                this.widgetFolders.push(filePath);
+                this.widgetFolders.add(filePath);
             }
         }
     }
@@ -40,16 +40,16 @@ class FolderStructureAnalyzer {
     }
     //Getter functions to return the 4 categories of folders
     getUtilsFolders() {
-        return this.utilsFolders;
+        return Array.from(this.utilsFolders);
     }
     getControllerFolders() {
-        return this.controllerFolders;
+        return Array.from(this.controllerFolders);
     }
     getUIFolders() {
-        return this.uiFolders;
+        return Array.from(this.uiFolders);
     }
     getWidgetFolders() {
-        return this.widgetFolders;
+        return Array.from(this.widgetFolders);
     }
 }
 exports.FolderStructureAnalyzer = FolderStructureAnalyzer;

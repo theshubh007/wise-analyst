@@ -2,22 +2,20 @@ import * as path from "path"
 
 export class FolderStructureAnalyzer {
   //Claffication of folders into 4 categories
-  private utilsFolders: string[]
-  private controllerFolders: string[]
-  private uiFolders: string[]
-  private widgetFolders: string[]
+  private utilsFolders: Set<string>
+  private controllerFolders: Set<string>
+  private uiFolders: Set<string>
+  private widgetFolders: Set<string>
 
   constructor() {
-    this.utilsFolders = []
-    this.controllerFolders = []
-    this.uiFolders = []
-    this.widgetFolders = []
+    this.utilsFolders = new Set()
+    this.controllerFolders = new Set()
+    this.uiFolders = new Set()
+    this.widgetFolders = new Set()
   }
-
 
   //Function to analyze folder structure
   public analyzeFolderStructure(fileStructure: Record<string, number>) {
-
     for (const filePath in fileStructure) {
       // Extract the file name and folder name from the file path and based on name, classify the folder into 4 categories
       const fileName = path.basename(filePath).toLowerCase()
@@ -27,17 +25,17 @@ export class FolderStructureAnalyzer {
         this.containsKeyword(fileName, ["utils", "asset"]) ||
         this.containsKeyword(folderName, ["utils", "widget"])
       ) {
-        this.utilsFolders.push(filePath)
+        this.utilsFolders.add(filePath)
       } else if (
         this.containsKeyword(fileName, ["controller"]) ||
         this.containsKeyword(folderName, ["controller"])
       ) {
-        this.controllerFolders.push(filePath)
+        this.controllerFolders.add(filePath)
       } else if (
         this.containsKeyword(fileName, ["presentation", "screen", "page"]) ||
         this.containsKeyword(folderName, ["presentation", "screen", "page"])
       ) {
-        this.uiFolders.push(filePath)
+        this.uiFolders.add(filePath)
       }
 
       // Check if the folder or file name contains "widget"
@@ -45,10 +43,9 @@ export class FolderStructureAnalyzer {
         this.containsKeyword(fileName, ["widget"]) ||
         this.containsKeyword(folderName, ["widget"])
       ) {
-        this.widgetFolders.push(filePath)
+        this.widgetFolders.add(filePath)
       }
     }
-  
   }
 
   private containsKeyword(fileName: string, keywords: string[]): boolean {
@@ -56,21 +53,20 @@ export class FolderStructureAnalyzer {
     return keywords.some((keyword) => lowerCaseFileName.includes(keyword))
   }
 
-
   //Getter functions to return the 4 categories of folders
   public getUtilsFolders(): string[] {
-    return this.utilsFolders
+    return Array.from(this.utilsFolders)
   }
 
   public getControllerFolders(): string[] {
-    return this.controllerFolders
+    return Array.from(this.controllerFolders)
   }
 
   public getUIFolders(): string[] {
-    return this.uiFolders
+    return Array.from(this.uiFolders)
   }
 
   public getWidgetFolders(): string[] {
-    return this.widgetFolders
+    return Array.from(this.widgetFolders)
   }
 }

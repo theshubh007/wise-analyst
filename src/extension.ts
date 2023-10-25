@@ -6,6 +6,9 @@ import { CodeQualityAnalyzer } from "./Services/CodeQualityAnalysis"
 import { PromptGenerator } from "./Services/PromptGenerator"
 import { ApiAnalyzer } from "./Services/Apianalyzer"
 // Adjust the path accordingly
+
+
+// ccduwg65i4kksut2sfsmh56fn5kmlykocn4zpkwm5eft5d3l2smq
 declare global {
   interface RegExpConstructor {
     escape(s: string): string

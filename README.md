@@ -1,53 +1,44 @@
 # flutter-analyzer-extension README
 
-This is the README for your extension "flutter-analyzer-extension". After writing up a brief description, we recommend including the following sections.
+##For whome these extension is built?
+The target audience includes a developer/team whose goal is to work on a new codebase or want to update functionality in an existing project.With the help of this tool, they can easily identify the structure of the code base, ApiFlow along with Suggestions of new Features
 
 ## Features
+•	Detect and analyze ApiFlow with Api-end-points.
+•	Analyze Project Structure.
+•	Analyze code quality.
+•	Generate a report summarizing the analysis results.
+•	Generate a prompt suggesting a way to extend the code.
+•	Provides  Developer-Friendly experience. 
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## How to Use
+• Press (ctrl+shift+p) then the search and select command
+  “Flutter: Analyze App” as given below.
 
-For example if there is an image subfolder under your extension project workspace:
+  ![Alt text](image.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+## Output Analysis  
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+  ![Alt text](image-3.png)
 
-## Requirements
+  ![Alt text](image-1.png)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+  ![Alt text](image-2.png)
 
-## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Note
+• Right now it is built to analyze flutter framework only.
 
-For example:
 
-This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
 
-## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Initial release of ...
+Initial release 
 
-### 1.0.1
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
 
 ## Following extension guidelines
 
@@ -55,17 +46,12 @@ Ensure that you've read through the extensions guidelines and follow the best pr
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Contributing
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+We welcome contributions! If you find a bug, have a feature request, or want to contribute in any way, please check our Gitub Repo: https://github.com/theshubh007/wise-analyst.
 
 ## For more information
+For support or inquiries, please contact us at shubhamkothiya007@gmail.com.
+Also you can connect with me at: https://www.linkedin.com/in/shubham-kothiya/
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
