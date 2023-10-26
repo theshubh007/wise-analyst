@@ -4,6 +4,11 @@
   "publisher": "ShubhamKothiya",
   "description": "Code Analysis for Flutter",
   "version": "0.0.1",
+  "icon": "./images/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theshubh007/wise-analyst"
+  },
   "engines": {
     "vscode": "^1.83.0"
   },
