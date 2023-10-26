@@ -5,6 +5,8 @@ export class PromptGenerator {
   private analysisResults: AnalysisResults
  
   chatGPTUrl = "https://api.openai.com/v1/completions"
+  apiKey=""
+  //you can find your apikey at https://platform.openai.com/account/api-keys
 
   constructor(analysisResults: AnalysisResults) {
     this.analysisResults = analysisResults
