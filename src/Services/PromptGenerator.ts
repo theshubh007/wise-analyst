@@ -3,7 +3,7 @@ import axios from "axios"
 
 export class PromptGenerator {
   private analysisResults: AnalysisResults
-  apiKey = "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"
+ 
   chatGPTUrl = "https://api.openai.com/v1/completions"
 
   constructor(analysisResults: AnalysisResults) {
